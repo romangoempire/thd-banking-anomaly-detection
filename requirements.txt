@@ -1,6 +1,0 @@
-icecream
-
-scikit-learn
-pandas
-
-fastapi[all]
