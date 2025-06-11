@@ -8,6 +8,7 @@ pages = {
     "Pages": [
         st.Page("routes/dataset.py", title="Dataset"),
         st.Page("routes/agency.py", title="Agency"),
+        st.Page("routes/province_state.py", title="Province State"),
     ]
 }
 
