@@ -1,4 +1,6 @@
 import polars as pl
+import pandas as pd
+from icecream import ic
 
 ORIGNAL_PATH: str = "data/original.csv"
 
@@ -28,6 +30,7 @@ def main() -> None:
     df = pl.read_csv(ORIGNAL_PATH)
     df = df.rename(
         {
+            "OBJECTID": "id",
             "AGENCY": "agency",
             "TRANSACTION_DATE": "date",
             "TRANSACTION_AMOUNT": "amount",
@@ -58,9 +61,9 @@ def main() -> None:
 
     df = df.sort(["agency", "date"])
 
-    df = df.drop(["OBJECTID"])
     df = df.select(
         [
+            "id",
             "agency",
             "date",
             "d_year",
@@ -85,7 +88,17 @@ def main() -> None:
             "description",
         ]
     )
+
+    ic("Save clean.csv")
     df.write_csv("data/clean.csv")
+
+    df = df.to_pandas()
+    ic("Start encoding")
+    df_encoded = pd.get_dummies(
+        df, columns=["agency", "vendor_state_province"], dtype=int
+    )
+    df_encoded.to_csv("data/encoded.csv", index=False)
+    ic("Save encoded.csv")
 
 
 if __name__ == "__main__":
