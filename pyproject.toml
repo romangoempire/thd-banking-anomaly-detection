@@ -5,7 +5,6 @@ description = "Anomaly Detection on Purchase Card Transaction Dataset"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "fastapi>=0.115.12",
     "icecream>=2.1.4",
     "polars>=1.29.0",
     "scikit-learn>=1.6.1",

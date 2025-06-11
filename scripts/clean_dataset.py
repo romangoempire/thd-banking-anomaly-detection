@@ -62,6 +62,7 @@ def main() -> None:
     df = df.select(
         [
             "agency",
+            "date",
             "d_year",
             "d_month",
             "d_day",
@@ -69,6 +70,7 @@ def main() -> None:
             "d_minute",
             "d_second",
             "d_weekday",
+            "modify_date",
             "m_year",
             "m_month",
             "m_day",
