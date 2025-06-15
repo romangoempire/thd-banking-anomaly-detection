@@ -76,7 +76,6 @@ with tabs[0]:
         transaction_per_day,
         x="date",
         y="amount",
-        log_y=log_scale,
         labels={"date": "Date", "amount": "Total Amount"},
         title="Total Amount per Date",
     )
