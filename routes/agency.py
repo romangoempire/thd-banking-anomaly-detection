@@ -136,7 +136,7 @@ with tabs[0]:
                 log_y=log_scale,
                 color="is_outlier",
                 color_discrete_map={True: "red"},
-                title="Outlier Transactions Over Time (Both Directions)",
+                title="Outlier Transactions Over Time (Both Directions) - 0.01 and 0.99 quantiles",
                 labels={"is_outlier": "Outlier"},
             )
             st.plotly_chart(fig, use_container_width=True)
